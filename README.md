@@ -1,1 +1,3 @@
-# assmebly
+# assembly 
+-derste yazılan kodlar.
+-güncelleme gelecek
