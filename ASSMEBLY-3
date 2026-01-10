@@ -1,0 +1,30 @@
+section .data
+pixel db 0x86  ;koyu kırmızı R=1011 0110   son bit = 0
+secret_bit db 1  ;gizlemek istediğimiz veri
+
+
+section .text
+    global _start
+
+
+_start:
+    ;print mesaj kodları
+    ;LSB bitini
+
+    mov al, [pixel]
+    ;  temizlik
+    and al, 0xFE
+
+
+    ; gizli biti ekle
+    or al, [secret_bit]
+
+
+    mov [pixel], al
+
+    
+    ;çıkış
+    ;çıkış yapmak için interrupt
+    mov rax, 60
+    mov rdi, 0
+    syscall
